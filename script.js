@@ -157,14 +157,16 @@ img6.addEventListener('click',()=>{
   img6.style.transition = 'rotate 0.5s linear';
 } )
 
-rightArr.addEventListener('click' ,function scrL(){
+rightArr.addEventListener('click' ,()=>{
   let element = document.getElementById('cards')
   element.scrollLeft += 400;
   leftArr.style.display = 'block';
 })
-leftArr.addEventListener('click' ,function scrL(){
-  let element = document.getElementById('cards')
-  element.scrollLeft +=  -400;
-})
 
-const inputbox = document.getElementById('inputbox').ariaDisabled
+leftArr.addEventListener('click' ,(e)=>{
+  let element = document.getElementById('cards')
+  if(screenX === 0 ){
+    leftArr.style.display = 'none'
+  }else(leftArr.style.display = 'block')
+  element.scrollLeft += -1500;
+})
